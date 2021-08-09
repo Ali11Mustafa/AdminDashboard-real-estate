@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 import {
   Col,
   Row,
@@ -51,10 +51,16 @@ const UiDropdown = () => {
     <React.Fragment>
       <div className="page-content">
         <MetaTags>
-          <title>Dropdowns | Veltrix - Responsive Bootstrap 5 Admin Dashboard</title>
+          <title>
+            Dropdowns | Veltrix - Responsive Bootstrap 5 Admin Dashboard
+          </title>
         </MetaTags>
         <Container fluid={true}>
-          <Breadcrumbs maintitle="Veltrix" title="UI Elements" breadcrumbItem="Dropdowns" />
+          <Breadcrumbs
+            maintitle="Veltrix"
+            title="UI Elements"
+            breadcrumbItem="Dropdowns"
+          />
 
           <Row>
             <Col lg={6}>
@@ -75,8 +81,7 @@ const UiDropdown = () => {
                         toggle={() => setSinglebtn(!singlebtn)}
                       >
                         <DropdownToggle className="btn btn-secondary" caret>
-                          Dropdown button{" "}
-                          <i className="mdi mdi-chevron-down" />
+                          Dropdown button <i className="mdi mdi-chevron-down" />
                         </DropdownToggle>
                         <DropdownMenu>
                           <DropdownItem>Action</DropdownItem>
@@ -121,7 +126,10 @@ const UiDropdown = () => {
                         isOpen={btnprimary1}
                         toggle={() => setBtnprimary1(!btnprimary1)}
                       >
-                        <DropdownToggle tag="button" className="btn btn-primary">
+                        <DropdownToggle
+                          tag="button"
+                          className="btn btn-primary"
+                        >
                           Primary <i className="mdi mdi-chevron-down" />
                         </DropdownToggle>
                         <DropdownMenu>
@@ -138,7 +146,10 @@ const UiDropdown = () => {
                         isOpen={btnsecondary1}
                         toggle={() => setBtnsecondary1(!btnsecondary1)}
                       >
-                        <DropdownToggle tag="button" className="btn btn-secondary">
+                        <DropdownToggle
+                          tag="button"
+                          className="btn btn-secondary"
+                        >
                           Secondary <i className="mdi mdi-chevron-down" />
                         </DropdownToggle>
                         <DropdownMenu>
@@ -155,7 +166,10 @@ const UiDropdown = () => {
                         isOpen={btnsuccess1}
                         toggle={() => setBtnsuccess1(!btnsuccess1)}
                       >
-                        <DropdownToggle tag="button" className="btn btn-success">
+                        <DropdownToggle
+                          tag="button"
+                          className="btn btn-success"
+                        >
                           Success <i className="mdi mdi-chevron-down" />
                         </DropdownToggle>
                         <DropdownMenu>
@@ -189,7 +203,10 @@ const UiDropdown = () => {
                         isOpen={btnWarning1}
                         toggle={() => setBtnWarning1(!btnWarning1)}
                       >
-                        <DropdownToggle tag="button" className="btn btn-warning">
+                        <DropdownToggle
+                          tag="button"
+                          className="btn btn-warning"
+                        >
                           Warning <i className="mdi mdi-chevron-down" />
                         </DropdownToggle>
                         <DropdownMenu>
@@ -242,7 +259,11 @@ const UiDropdown = () => {
                         <Button id="caret" color="primary">
                           Primary
                         </Button>
-                        <DropdownToggle caret color="primary" className="dropdown-toggle-split">
+                        <DropdownToggle
+                          caret
+                          color="primary"
+                          className="dropdown-toggle-split"
+                        >
                           <i className="mdi mdi-chevron-down" />
                         </DropdownToggle>
                         <DropdownMenu>
@@ -263,7 +284,11 @@ const UiDropdown = () => {
                         <Button id="caret" color="secondary">
                           Secondary
                         </Button>
-                        <DropdownToggle caret color="secondary" className="dropdown-toggle-split">
+                        <DropdownToggle
+                          caret
+                          color="secondary"
+                          className="dropdown-toggle-split"
+                        >
                           <i className="mdi mdi-chevron-down" />
                         </DropdownToggle>
                         <DropdownMenu>
@@ -284,7 +309,11 @@ const UiDropdown = () => {
                         <Button id="caret" color="success">
                           Success
                         </Button>
-                        <DropdownToggle caret color="success" className="dropdown-toggle-split">
+                        <DropdownToggle
+                          caret
+                          color="success"
+                          className="dropdown-toggle-split"
+                        >
                           <i className="mdi mdi-chevron-down" />
                         </DropdownToggle>
                         <DropdownMenu>
@@ -305,7 +334,11 @@ const UiDropdown = () => {
                         <Button id="caret" color="info">
                           Info
                         </Button>
-                        <DropdownToggle caret color="info" className="dropdown-toggle-split">
+                        <DropdownToggle
+                          caret
+                          color="info"
+                          className="dropdown-toggle-split"
+                        >
                           <i className="mdi mdi-chevron-down" />
                         </DropdownToggle>
                         <DropdownMenu>
@@ -318,7 +351,6 @@ const UiDropdown = () => {
                       </ButtonDropdown>
                     </div>
 
-
                     <div className="btn-group">
                       <ButtonDropdown
                         isOpen={drp_warning1}
@@ -326,8 +358,12 @@ const UiDropdown = () => {
                       >
                         <Button id="caret" color="warning">
                           Warning
-                      </Button>
-                        <DropdownToggle caret color="warning" className="dropdown-toggle-split">
+                        </Button>
+                        <DropdownToggle
+                          caret
+                          color="warning"
+                          className="dropdown-toggle-split"
+                        >
                           <i className="mdi mdi-chevron-down" />
                         </DropdownToggle>
                         <DropdownMenu>
@@ -347,8 +383,12 @@ const UiDropdown = () => {
                       >
                         <Button id="caret" color="danger">
                           Danger
-                      </Button>
-                        <DropdownToggle caret color="danger" className="dropdown-toggle-split">
+                        </Button>
+                        <DropdownToggle
+                          caret
+                          color="danger"
+                          className="dropdown-toggle-split"
+                        >
                           <i className="mdi mdi-chevron-down" />
                         </DropdownToggle>
                         <DropdownMenu>
@@ -385,8 +425,7 @@ const UiDropdown = () => {
                           color="secondary"
                           className="btn btn-secondary btn-lg"
                         >
-                          Large button {" "}
-                          <i className="mdi mdi-chevron-down" />
+                          Large button <i className="mdi mdi-chevron-down" />
                         </DropdownToggle>
                         <DropdownMenu>
                           <DropdownItem disabled>Action</DropdownItem>
@@ -396,7 +435,6 @@ const UiDropdown = () => {
                         </DropdownMenu>
                       </ButtonDropdown>
                     </div>{" "}
-
                     <div className="btn-group me-1 mt-2">
                       <ButtonDropdown
                         isOpen={drp_secondary_lg}
@@ -404,7 +442,7 @@ const UiDropdown = () => {
                       >
                         <Button className="btn btn-secondary btn-lg">
                           Large button
-                      </Button>
+                        </Button>
                         <DropdownToggle
                           caret
                           color="secondary"
@@ -420,7 +458,6 @@ const UiDropdown = () => {
                         </DropdownMenu>
                       </ButtonDropdown>
                     </div>{" "}
-
                     <div className="btn-group me-1 mt-2">
                       <ButtonDropdown
                         isOpen={drp_secondary_sm}
@@ -431,8 +468,7 @@ const UiDropdown = () => {
                           color="secondary"
                           className="btn btn-secondary btn-sm"
                         >
-                          Small button {" "}
-                          <i className="mdi mdi-chevron-down" />
+                          Small button <i className="mdi mdi-chevron-down" />
                         </DropdownToggle>
                         <DropdownMenu>
                           <DropdownItem disabled>Action</DropdownItem>
@@ -442,7 +478,6 @@ const UiDropdown = () => {
                         </DropdownMenu>
                       </ButtonDropdown>
                     </div>{" "}
-
                     <div className="btn-group me-1 mt-2">
                       <ButtonDropdown
                         isOpen={drp_secondary_sm1}
@@ -450,8 +485,8 @@ const UiDropdown = () => {
                       >
                         <Button className="btn btn-secondary btn-sm">
                           {" "}
-                        Small button
-                      </Button>
+                          Small button
+                        </Button>
                         <DropdownToggle
                           caret
                           color="secondary"
@@ -663,9 +698,13 @@ const UiDropdown = () => {
             <div className="col-lg-12">
               <div className="card">
                 <div className="card-body">
-
                   <h4 className="card-title">Responsive alignment</h4>
-                  <p className="card-title-desc">If you want to use responsive alignment, disable dynamic positioning by adding the <code>data-bs-display="static"</code> attribute and use the responsive variation classes.</p>
+                  <p className="card-title-desc">
+                    If you want to use responsive alignment, disable dynamic
+                    positioning by adding the{" "}
+                    <code>data-bs-display="static"</code> attribute and use the
+                    responsive variation classes.
+                  </p>
 
                   <div className="d-flex gap-2 flex-wrap">
                     <div className="btn-group">
@@ -714,7 +753,6 @@ const UiDropdown = () => {
                       </ButtonDropdown>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
