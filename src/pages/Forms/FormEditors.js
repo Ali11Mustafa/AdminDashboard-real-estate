@@ -242,26 +242,24 @@ const FormValidations = () => {
                     </Row>
                     <Row className="mt-4">
                       <Col lg="4" md="4" sm="4" xs="4">
-                        <Button color="success" type="submit">
-                          زیادکردن
+                        <Button color="danger" type="submit">
+                          سڕینەوە
                         </Button>
                       </Col>
                       <Col lg="4" md="4" sm="6" sm="4" xs="4">
                         <Button color="info" type="submit">
-                          زیادکردن
+                          گۆڕین
                         </Button>
                       </Col>
 
                       <Col lg="4" md="4" sm="6" sm="4" xs="4">
-                        <Button color="danger" type="submit">
+                        <Button color="success" type="submit">
                           زیادکردن
                         </Button>
                       </Col>
                     </Row>
-                    <Row className="mb-5 mt-5">
-                      <h1 style={{ textAlign: "center" }}>گەڕان</h1>
-                    </Row>
-                    <Row>
+
+                    <Row className="mt-5">
                       <Col md="3" sm="6"></Col>
                       <Col md="3" sm="6"></Col>
 
@@ -291,7 +289,6 @@ const FormValidations = () => {
                           </Dropdown>
                         </FormGroup>
                       </Col>
-
                       <Col md="3" sm="6">
                         <FormGroup className="mb-3">
                           <Label htmlFor="validationCustom01">جۆری عەرز</Label>
