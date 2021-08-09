@@ -1,5 +1,5 @@
 import React from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 import { MDBDataTable } from "mdbreact"
 import { Row, Col, Card, CardBody, CardTitle, CardSubtitle } from "reactstrap"
 
@@ -511,10 +511,16 @@ const DatatableTables = () => {
     <React.Fragment>
       <div className="page-content">
         <MetaTags>
-          <title>Data Tables | Veltrix - Responsive Bootstrap 5 Admin Dashboard</title>
+          <title>
+            Data Tables | Veltrix - Responsive Bootstrap 5 Admin Dashboard
+          </title>
         </MetaTags>
         <div className="container-fluid">
-          <Breadcrumbs maintitle="Veltrix" title="Tables" breadcrumbItem="Data Tables" />
+          <Breadcrumbs
+            maintitle="Veltrix"
+            title="Tables"
+            breadcrumbItem="Data Tables"
+          />
 
           <Row>
             <Col className="col-12">
