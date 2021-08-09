@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 
 import {
   Row,
@@ -14,8 +14,15 @@ import {
   Input,
   Container,
   CustomInput,
+  Dropdown,
+  DropdownMenu,
+  DropdownItem,
+  DropdownToggle,
+  ButtonDropdown,
+  InputGroup,
 } from "reactstrap"
 import { AvForm, AvField } from "availity-reactstrap-validation"
+import Flatpickr from "react-flatpickr"
 
 //Import Breadcrumb
 import Breadcrumbs from "../../components/Common/Breadcrumb"
@@ -26,6 +33,17 @@ const FormValidations = () => {
   const [unm, setunm] = useState(false)
   const [city, setcity] = useState(false)
   const [stateV, setstateV] = useState(false)
+  const [singlebtn, setSinglebtn] = useState(false)
+  const [singlebtn1, setSinglebtn1] = useState(false)
+  const [singlebtn2, setSinglebtn2] = useState(false)
+  const [singlebtn3, setSinglebtn3] = useState(false)
+  const [singlebtn4, setSinglebtn4] = useState(false)
+  const [singlebtn5, setSinglebtn5] = useState(false)
+  const [singlebtn6, setSinglebtn6] = useState(false)
+  const [singlebtn7, setSinglebtn7] = useState(false)
+  const [singlebtn8, setSinglebtn8] = useState(false)
+  const [singlebtn9, setSinglebtn9] = useState(false)
+  const [singlebtn10, setSinglebtn10] = useState(false)
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -85,31 +103,21 @@ const FormValidations = () => {
   return (
     <React.Fragment>
       <div className="page-content">
-        <MetaTags>
-          <title>Form Validation | Skote - React Admin & Dashboard Template</title>
-        </MetaTags>
         <Container fluid={true}>
           <Breadcrumbs title="Form" breadcrumbItem="Form Validation" />
           <Row>
-            <Col xl="6">
+            <Col xl="12">
               <Card>
                 <CardBody>
-                  <h4 className="card-title">React Validation - Normal</h4>
-                  <p className="card-title-desc">
-                    Provide valuable, actionable feedback to your users with
-                    HTML5 form validation–available in all our supported
-                    browsers.
-                  </p>
                   <AvForm className="needs-validation">
                     <Row>
-                      <Col md="6">
+                      <Col md="3" sm="6">
                         <FormGroup className="mb-3">
                           <Label htmlFor="validationCustom01">
-                            First name
-                            </Label>
+                            ناو-شوێن-گەڕەک
+                          </Label>
                           <AvField
-                            name="firstname"
-                            placeholder="First name"
+                            name="naw-shwen"
                             type="text"
                             errorMessage="Enter First Name"
                             className="form-control"
@@ -118,14 +126,64 @@ const FormValidations = () => {
                           />
                         </FormGroup>
                       </Col>
-                      <Col md="6">
+                      <Col md="3" sm="6">
+                        <FormGroup className="mb-3">
+                          {/**<AvField
+                          name="lastname"
+                          placeholder="Last name"
+                          type="text"
+                          errorMessage="Enter Last name"
+                          className="form-control"
+                          validate={{ required: { value: true } }}
+                          id="validationCustom02"
+                        /> */}
+                          <Label htmlFor="validationCustom02">جۆری عەرز</Label>
+
+                          <Dropdown
+                            isOpen={singlebtn1}
+                            toggle={() => setSinglebtn1(!singlebtn1)}
+                          >
+                            <DropdownToggle
+                              className="form-control"
+                              style={{ textAlign: "left" }}
+                            >
+                              <i className="mdi mdi-chevron-down" />
+                            </DropdownToggle>
+                            <DropdownMenu>
+                              <DropdownItem>A</DropdownItem>
+                              <DropdownItem>B</DropdownItem>
+                              <DropdownItem>C</DropdownItem>
+                              <DropdownItem>D</DropdownItem>
+                              <DropdownItem>E</DropdownItem>
+                              <DropdownItem>F</DropdownItem>
+                            </DropdownMenu>
+                          </Dropdown>
+                        </FormGroup>
+                      </Col>
+
+                      <Col md="3" sm="6">
                         <FormGroup className="mb-3">
                           <Label htmlFor="validationCustom02">
-                            Last name
-                            </Label>
+                            ژمارەی مۆبایل
+                          </Label>
                           <AvField
-                            name="lastname"
-                            placeholder="Last name"
+                            name="mobile"
+                            type="text"
+                            errorMessage="Enter Last name"
+                            className="form-control"
+                            validate={{ required: { value: true } }}
+                            id="validationCustom02"
+                          />
+                        </FormGroup>
+                      </Col>
+
+                      <Col md="3" sm="6">
+                        <FormGroup className="mb-3">
+                          <Label htmlFor="validationCustom02">
+                            ناوی فرۆشیار
+                          </Label>
+                          <AvField
+                            name="froshyar"
                             type="text"
                             errorMessage="Enter Last name"
                             className="form-control"
@@ -136,12 +194,499 @@ const FormValidations = () => {
                       </Col>
                     </Row>
                     <Row>
-                      <Col md="4">
+                      <Col md="3" sm="6">
                         <FormGroup className="mb-3">
-                          <Label htmlFor="validationCustom03">City</Label>
+                          <Label htmlFor="validationCustom01">ڕووبەر</Label>
                           <AvField
-                            name="city"
-                            placeholder="City"
+                            name="rwabar"
+                            type="text"
+                            errorMessage="Enter First Name"
+                            className="form-control"
+                            validate={{ required: { value: true } }}
+                            id="validationCustom01"
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col md="3" sm="6">
+                        <FormGroup className="mb-3">
+                          {/**<AvField
+                        name="lastname"
+                        placeholder="Last name"
+                        type="text"
+                        errorMessage="Enter Last name"
+                        className="form-control"
+                        validate={{ required: { value: true } }}
+                        id="validationCustom02"
+                      /> */}
+                          <Label htmlFor="validationCustom02">ڕووگە</Label>
+
+                          <Dropdown
+                            isOpen={singlebtn2}
+                            toggle={() => setSinglebtn2(!singlebtn2)}
+                          >
+                            <DropdownToggle
+                              className="form-control"
+                              style={{ textAlign: "left" }}
+                            >
+                              <i className="mdi mdi-chevron-down" />
+                            </DropdownToggle>
+                            <DropdownMenu>
+                              <DropdownItem>A</DropdownItem>
+                              <DropdownItem>B</DropdownItem>
+                              <DropdownItem>C</DropdownItem>
+                              <DropdownItem>D</DropdownItem>
+                              <DropdownItem>E</DropdownItem>
+                              <DropdownItem>F</DropdownItem>
+                            </DropdownMenu>
+                          </Dropdown>
+                        </FormGroup>
+                      </Col>
+
+                      {/** <Col md="3" sm="6">
+                        <FormGroup className="mb-3">
+                          <Label htmlFor="validationCustom02">Last name</Label>
+                          <AvField
+                            name="lastname"
+                            placeholder="Last name"
+                            type="text"
+                            errorMessage="Enter Last name"
+                            className="form-control"
+                            validate={{ required: { value: true } }}
+                            id="validationCustom02"
+                          />
+                        </FormGroup>
+                      </Col>*/}
+
+                      <Col md="3" sm="6">
+                        <FormGroup className="mb-3">
+                          {/**<AvField
+                            name="lastname"
+                            placeholder="Last name"
+                            type="text"
+                            errorMessage="Enter Last name"
+                            className="form-control"
+                            validate={{ required: { value: true } }}
+                            id="validationCustom02"
+                          /> */}
+                          <Label htmlFor="validationCustom02">
+                            جۆری خاوەندارێتی
+                          </Label>
+
+                          <Dropdown
+                            isOpen={singlebtn3}
+                            toggle={() => setSinglebtn3(!singlebtn3)}
+                          >
+                            <DropdownToggle
+                              className="form-control"
+                              caret
+                              style={{ textAlign: "left" }}
+                            >
+                              <i className="mdi mdi-chevron-down" />
+                            </DropdownToggle>
+                            <DropdownMenu>
+                              <DropdownItem>A</DropdownItem>
+                              <DropdownItem>B</DropdownItem>
+                              <DropdownItem>C</DropdownItem>
+                              <DropdownItem>D</DropdownItem>
+                              <DropdownItem>E</DropdownItem>
+                              <DropdownItem>F</DropdownItem>
+                            </DropdownMenu>
+                          </Dropdown>
+                        </FormGroup>
+                      </Col>
+                      <Col md="3" sm="6">
+                        <FormGroup className="mb-3">
+                          {/**<AvField
+                            name="lastname"
+                            placeholder="Last name"
+                            type="text"
+                            errorMessage="Enter Last name"
+                            className="form-control"
+                            validate={{ required: { value: true } }}
+                            id="validationCustom02"
+                          /> */}
+                          <Label htmlFor="validationCustom02">جۆری موڵک</Label>
+
+                          <Dropdown
+                            isOpen={singlebtn4}
+                            toggle={() => setSinglebtn4(!singlebtn4)}
+                          >
+                            <DropdownToggle
+                              className="form-control"
+                              caret
+                              style={{ textAlign: "left" }}
+                            >
+                              <i className="mdi mdi-chevron-down" />
+                            </DropdownToggle>
+                            <DropdownMenu>
+                              <DropdownItem>A</DropdownItem>
+                              <DropdownItem>B</DropdownItem>
+                              <DropdownItem>C</DropdownItem>
+                              <DropdownItem>D</DropdownItem>
+                              <DropdownItem>E</DropdownItem>
+                              <DropdownItem>F</DropdownItem>
+                            </DropdownMenu>
+                          </Dropdown>
+                        </FormGroup>
+                      </Col>
+                      {/** <Col md="3" sm="6">
+                        <FormGroup className="mb-3">
+                          <Label htmlFor="validationCustom02">Last name</Label>
+                          <AvField
+                            name="lastname"
+                            placeholder="Last name"
+                            type="text"
+                            errorMessage="Enter Last name"
+                            className="form-control"
+                            validate={{ required: { value: true } }}
+                            id="validationCustom02"
+                          />
+                        </FormGroup>
+                      </Col> */}
+                    </Row>
+                    <Row>
+                      <Col md="3" sm="6">
+                        <FormGroup className="mb-3">
+                          <Label htmlFor="validationCustom01">
+                            پێشەکی مانگانە
+                          </Label>
+                          <AvField
+                            name="peshaki"
+                            type="text"
+                            errorMessage="Enter First Name"
+                            className="form-control"
+                            validate={{ required: { value: true } }}
+                            id="validationCustom01"
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col md="3" sm="6">
+                        <FormGroup className="mb-3">
+                          <Label htmlFor="validationCustom02">نرخ</Label>
+                          <AvField
+                            name="nrx"
+                            type="text"
+                            errorMessage="Enter Last name"
+                            className="form-control"
+                            validate={{ required: { value: true } }}
+                            id="validationCustom02"
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col md="3" sm="6">
+                        <FormGroup className="mb-3">
+                          <Label htmlFor="validationCustom02">
+                            ژمارەی خانوو
+                          </Label>
+                          <AvField
+                            name="jmaray xanu"
+                            type="text"
+                            errorMessage="Enter Last name"
+                            className="form-control"
+                            validate={{ required: { value: true } }}
+                            id="validationCustom02"
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col md="3" sm="6">
+                        <FormGroup className="mb-3">
+                          <Label htmlFor="validationCustom02">واجهە</Label>
+                          <AvField
+                            name="wajha"
+                            type="text"
+                            errorMessage="Enter Last name"
+                            className="form-control"
+                            validate={{ required: { value: true } }}
+                            id="validationCustom02"
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col md="3" sm="6">
+                        <FormGroup className="mb-3">
+                          <Label htmlFor="validationCustom01">
+                            ژمارەی نهۆم
+                          </Label>
+                          <AvField
+                            name="jmaray nhom"
+                            type="text"
+                            errorMessage="Enter First Name"
+                            className="form-control"
+                            validate={{ required: { value: true } }}
+                            id="validationCustom01"
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col md="3" sm="6">
+                        <FormGroup className="mb-3">
+                          {/**<AvField
+                        name="lastname"
+                        placeholder="Last name"
+                        type="text"
+                        errorMessage="Enter Last name"
+                        className="form-control"
+                        validate={{ required: { value: true } }}
+                        id="validationCustom02"
+                      /> */}
+
+                          <Label htmlFor="validationCustom02">
+                            ناوی خاوەن موڵک
+                          </Label>
+                          <AvField
+                            name="xawan mulk"
+                            type="text"
+                            errorMessage="Enter Last name"
+                            className="form-control"
+                            validate={{ required: { value: true } }}
+                            id="validationCustom02"
+                          />
+                        </FormGroup>
+                      </Col>
+
+                      <Col md="3" sm="6">
+                        <FormGroup className="mb-3">
+                          <Label htmlFor="validationCustom02">
+                            ژمارەی زەوی
+                          </Label>
+                          <AvField
+                            name="jmaray zawey"
+                            type="text"
+                            errorMessage="Enter Last name"
+                            className="form-control"
+                            validate={{ required: { value: true } }}
+                            id="validationCustom02"
+                          />
+                        </FormGroup>
+                      </Col>
+
+                      <Col md="3" sm="6">
+                        <FormGroup className="mb-3">
+                          <Label>بەروار</Label>
+                          <InputGroup>
+                            {/* <DatePicker
+                            selected={startDate}
+                            onChange={date => setStartDate(date)}
+                            dateFormat="MM/yyyy"
+                            showMonthYearPicker
+                          /> */}
+                            <Flatpickr
+                              className="form-control d-block"
+                              placeholder="dd M,yyyy"
+                              options={{
+                                altInput: true,
+                                altFormat: "F j, Y",
+                                dateFormat: "Y-m-d",
+                              }}
+                            />
+                          </InputGroup>
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col md="3" sm="6">
+                        <FormGroup className="mb-3">
+                          <Label htmlFor="validationCustom01">وڵات</Label>
+                          <Dropdown
+                            isOpen={singlebtn5}
+                            toggle={() => setSinglebtn5(!singlebtn5)}
+                          >
+                            <DropdownToggle
+                              className="form-control"
+                              caret
+                              style={{ textAlign: "left" }}
+                            >
+                              <i className="mdi mdi-chevron-down" />
+                            </DropdownToggle>
+                            <DropdownMenu>
+                              <DropdownItem>A</DropdownItem>
+                              <DropdownItem>B</DropdownItem>
+                              <DropdownItem>C</DropdownItem>
+                              <DropdownItem>D</DropdownItem>
+                              <DropdownItem>E</DropdownItem>
+                              <DropdownItem>F</DropdownItem>
+                            </DropdownMenu>
+                          </Dropdown>
+                        </FormGroup>
+                      </Col>
+                      <Col md="3" sm="6">
+                        <FormGroup className="mb-3">
+                          {/**<AvField
+                      name="lastname"
+                      placeholder="Last name"
+                      type="text"
+                      errorMessage="Enter Last name"
+                      className="form-control"
+                      validate={{ required: { value: true } }}
+                      id="validationCustom02"
+                    /> */}
+
+                          <Label htmlFor="validationCustom02">
+                            ژمارەی حەمام و ئاودەست
+                          </Label>
+                          <AvField
+                            name="jmaray 7amam"
+                            type="text"
+                            errorMessage="Enter Last name"
+                            className="form-control"
+                            validate={{ required: { value: true } }}
+                            id="validationCustom02"
+                          />
+                        </FormGroup>
+                      </Col>
+
+                      <Col md="3" sm="6">
+                        <FormGroup className="mb-3">
+                          <Label htmlFor="validationCustom02">
+                            ژمارەی ژووری نوستن
+                          </Label>
+                          <AvField
+                            name="nustn"
+                            type="text"
+                            errorMessage="Enter Last name"
+                            className="form-control"
+                            validate={{ required: { value: true } }}
+                            id="validationCustom02"
+                          />
+                        </FormGroup>
+                      </Col>
+
+                      <Col md="3" sm="6">
+                        <FormGroup className="mb-3">
+                          <Label htmlFor="validationCustom02">
+                            ژمارەی ژوور
+                          </Label>
+                          <AvField
+                            name="rooms"
+                            type="text"
+                            errorMessage="Enter Last name"
+                            className="form-control"
+                            validate={{ required: { value: true } }}
+                            id="validationCustom02"
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col md="3" sm="6">
+                        <FormGroup className="mb-3">
+                          <Label htmlFor="validationCustom01">لق</Label>
+                          <Dropdown
+                            isOpen={singlebtn7}
+                            toggle={() => setSinglebtn7(!singlebtn7)}
+                          >
+                            <DropdownToggle
+                              className="form-control"
+                              caret
+                              style={{ textAlign: "left" }}
+                            >
+                              <i className="mdi mdi-chevron-down" />
+                            </DropdownToggle>
+                            <DropdownMenu>
+                              <DropdownItem>A</DropdownItem>
+                              <DropdownItem>B</DropdownItem>
+                              <DropdownItem>C</DropdownItem>
+                              <DropdownItem>D</DropdownItem>
+                              <DropdownItem>E</DropdownItem>
+                              <DropdownItem>F</DropdownItem>
+                            </DropdownMenu>
+                          </Dropdown>
+                        </FormGroup>
+                      </Col>
+                      <Col md="3" sm="6">
+                        <FormGroup className="mb-3">
+                          {/**<AvField
+                    name="lastname"
+                    placeholder="Last name"
+                    type="text"
+                    errorMessage="Enter Last name"
+                    className="form-control"
+                    validate={{ required: { value: true } }}
+                    id="validationCustom02"
+                  /> */}
+
+                          <Label htmlFor="validationCustom02">ناحیە</Label>
+                          <Dropdown
+                            isOpen={singlebtn8}
+                            toggle={() => setSinglebtn8(!singlebtn8)}
+                          >
+                            <DropdownToggle
+                              className="form-control"
+                              caret
+                              style={{ textAlign: "left" }}
+                            >
+                              <i className="mdi mdi-chevron-down" />
+                            </DropdownToggle>
+                            <DropdownMenu>
+                              <DropdownItem>A</DropdownItem>
+                              <DropdownItem>B</DropdownItem>
+                              <DropdownItem>C</DropdownItem>
+                              <DropdownItem>D</DropdownItem>
+                              <DropdownItem>E</DropdownItem>
+                              <DropdownItem>F</DropdownItem>
+                            </DropdownMenu>
+                          </Dropdown>
+                        </FormGroup>
+                      </Col>
+
+                      <Col md="3" sm="6">
+                        <FormGroup className="mb-3">
+                          <Label htmlFor="validationCustom02">قەزا </Label>
+                          <Dropdown
+                            isOpen={singlebtn9}
+                            toggle={() => setSinglebtn9(!singlebtn9)}
+                          >
+                            <DropdownToggle
+                              className="form-control"
+                              caret
+                              style={{ textAlign: "left" }}
+                            >
+                              <i className="mdi mdi-chevron-down" />
+                            </DropdownToggle>
+                            <DropdownMenu>
+                              <DropdownItem>A</DropdownItem>
+                              <DropdownItem>B</DropdownItem>
+                              <DropdownItem>C</DropdownItem>
+                              <DropdownItem>D</DropdownItem>
+                              <DropdownItem>E</DropdownItem>
+                              <DropdownItem>F</DropdownItem>
+                            </DropdownMenu>
+                          </Dropdown>
+                        </FormGroup>
+                      </Col>
+
+                      <Col md="3" sm="6">
+                        <FormGroup className="mb-3">
+                          <Label htmlFor="validationCustom02">شار </Label>
+                          <Dropdown
+                            isOpen={singlebtn}
+                            toggle={() => setSinglebtn(!singlebtn)}
+                          >
+                            <DropdownToggle
+                              className="form-control"
+                              caret
+                              style={{ textAlign: "left" }}
+                            >
+                              <i className="mdi mdi-chevron-down" />
+                            </DropdownToggle>
+                            <DropdownMenu>
+                              <DropdownItem>A</DropdownItem>
+                              <DropdownItem>B</DropdownItem>
+                              <DropdownItem>C</DropdownItem>
+                              <DropdownItem>D</DropdownItem>
+                              <DropdownItem>E</DropdownItem>
+                              <DropdownItem>F</DropdownItem>
+                            </DropdownMenu>
+                          </Dropdown>
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col md="4" sm="6">
+                        <FormGroup className="mb-3">
+                          <Label htmlFor="validationCustom03">تێبینی</Label>
+                          <AvField
+                            name="tebini"
                             type="text"
                             errorMessage=" Please provide a valid city."
                             className="form-control"
@@ -150,463 +695,24 @@ const FormValidations = () => {
                           />
                         </FormGroup>
                       </Col>
-                      <Col md="4">
-                        <FormGroup className="mb-3">
-                          <Label htmlFor="validationCustom04">State</Label>
-                          <AvField
-                            name="state"
-                            placeholder="State"
-                            type="text"
-                            errorMessage="Please provide a valid state."
-                            className="form-control"
-                            validate={{ required: { value: true } }}
-                            id="validationCustom04"
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col md="4">
-                        <FormGroup className="mb-3">
-                          <Label htmlFor="validationCustom05">Zip</Label>
-                          <AvField
-                            name="zip"
-                            placeholder="Zip Code"
-                            type="text"
-                            errorMessage=" Please provide a valid zip."
-                            className="form-control"
-                            validate={{ required: { value: true } }}
-                            id="validationCustom05"
-                          />
-                        </FormGroup>
-                      </Col>
                     </Row>
                     <Row>
-                      <Col lg="12">
-                        <FormGroup className="mb-3">
-                          <div className="form-check">
-                            <Input
-                              type="checkbox"
-                              className="form-check-input"
-                              id="invalidCheck"
-                            />
-                            <Label
-                              className="form-check-label"
-                              htmlFor="invalidCheck"
-                            >{" "}
-                            Agree to terms and conditions
-                          </Label>
-                          </div>
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Button color="primary" type="submit">
-                      Submit form
-                      </Button>
-                  </AvForm>
-                </CardBody>
-              </Card>
-            </Col>
-
-            <Col xl="6">
-              <Card>
-                <CardBody>
-                  <h4 className="card-title">
-                    React Validation (Tooltips)
-                  </h4>
-                  <p className="card-title-desc">
-                    If your form layout allows it, you can swap the
-                    <code>.{"{valid | invalid-}"}feedback</code> classes for
-                    <code>.{"{valid | invalid-}"}-tooltip</code> classes to display validation feedback in a
-                    styled tooltip.
-                  </p>
-                  <form
-                    className="needs-validation"
-                    method="post"
-                    id="tooltipForm"
-                    onSubmit={e => {
-                      handleSubmit(e)
-                    }}
-                  >
-                    <Row>
-                      <Col md="4">
-                        <div className="mb-3 position-relative">
-                          <Label htmlFor="validationTooltip01">
-                            First name
-                          </Label>
-                          <Input
-                            type="text"
-                            className="form-control"
-                            id="validationTooltip01"
-                            placeholder="First name"
-                            onChange={event =>
-                              changeHandeler(event, "validate1")
-                            }
-                          />
-
-                          <div
-                            className={
-                              fnm === true ? "valid-tooltip" : "invalid-tooltip"
-                            }
-                            name="validate"
-                            id="validate1"
-                          >
-                            {fnm === true
-                              ? "Looks good!"
-                              : "Please Enter Valid First Name"}
-                          </div>
-                        </div>
-                      </Col>
-                      <Col md="4">
-                        <div className="mb-3 position-relative">
-                          <Label htmlFor="validationTooltip02">Last name</Label>
-                          <Input
-                            type="text"
-                            className="form-control"
-                            id="validationTooltip02"
-                            placeholder="Last name"
-                            onChange={event =>
-                              changeHandeler(event, "validate2")
-                            }
-                          />
-                          <div
-                            className={
-                              lnm === true ? "valid-tooltip" : "invalid-tooltip"
-                            }
-                            name="validate"
-                            id="validate2"
-                          >
-                            {lnm === true
-                              ? "Looks good!"
-                              : "Please Enter Valid Last Name"}
-                          </div>
-                        </div>
-                      </Col>
-                      <Col md="4">
-                        <div className="mb-3 position-relative">
-                          <Label htmlFor="validationTooltipUsername">
-                            Username
-                          </Label>
-                          <div className="input-group">
-                            <div className="input-group-prepend">
-                              <span
-                                className="input-group-text"
-                                id="validationTooltipUsernamePrepend"
-                              >
-                                @
-                              </span>
-                            </div>
-                            <Input
-                              type="text"
-                              className="form-control"
-                              id="validationTooltipUsername"
-                              placeholder="Username"
-                              onChange={event =>
-                                changeHandeler(event, "validate3")
-                              }
-                            />
-                            <div
-                              className={
-                                unm === true
-                                  ? "valid-tooltip"
-                                  : "invalid-tooltip"
-                              }
-                              name="validate"
-                              id="validate3"
-                            >
-                              {unm === true
-                                ? "Looks good!"
-                                : "Please choose a unique and valid username."}
-                            </div>
-                          </div>
-                        </div>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col md="6">
-                        <div className="mb-3 position-relative">
-                          <Label htmlFor="validationTooltip03">City</Label>
-                          <Input
-                            type="text"
-                            className="form-control"
-                            id="validationTooltip03"
-                            placeholder="City"
-                            onChange={event =>
-                              changeHandeler(event, "validate4")
-                            }
-                          />
-                          <div
-                            className={
-                              city === true
-                                ? "valid-tooltip"
-                                : "invalid-tooltip"
-                            }
-                            name="validate"
-                            id="validate4"
-                          >
-                            {city === true
-                              ? "Looks good!"
-                              : "Please choose a unique and valid username.Please provide a valid city."}
-                          </div>
-                        </div>
-                      </Col>
-                      <Col md="6">
-                        <div className="mb-3 position-relative">
-                          <Label htmlFor="validationTooltip04">State</Label>
-                          <Input
-                            type="text"
-                            className="form-control"
-                            id="validationTooltip04"
-                            placeholder="State"
-                            onChange={event =>
-                              changeHandeler(event, "validate5")
-                            }
-                          />
-                          <div
-                            className={
-                              stateV === true
-                                ? "valid-tooltip"
-                                : "invalid-tooltip"
-                            }
-                            name="validate"
-                            id="validate5"
-                          >
-                            {stateV === true
-                              ? "Looks good!"
-                              : "Please provide a valid state."}
-                          </div>
-                        </div>
-                      </Col>
-                    </Row>
-                    <Button color="primary" type="submit">
-                      Submit form
-                    </Button>
-                  </form>
-                </CardBody>
-              </Card>
-            </Col>
-          </Row>
-          <Row>
-            <Col lg={6}>
-              <Card>
-                <CardBody>
-                  <CardTitle>Validation type</CardTitle>
-                  <CardSubtitle className="mb-3">
-                    Parsley is a availity reactstrap validation. It helps you
-                    provide your users with feedback on their form submission
-                    before sending it to your server.
-                  </CardSubtitle>
-
-                  <AvForm>
-                    <div className="mb-3">
-                      <AvField
-                        name="username"
-                        label="Required  "
-                        placeholder="Type Something"
-                        type="text"
-                        errorMessage="Enter Name"
-                        validate={{ required: { value: true } }}
-                      />
-                    </div>
-                    <div className="mb-3">
-                      <Label>Equal To</Label>
-                      <AvField
-                        name="password"
-                        type="password"
-                        placeholder="Password"
-                        errorMessage="Enter password"
-                        validate={{ required: { value: true } }}
-                      />
-                    </div>
-                    <div className="mb-3">
-                      <AvField
-                        name="password1"
-                        type="password"
-                        placeholder="Re-type Password"
-                        errorMessage="Enter Re-password"
-                        validate={{
-                          required: { value: true },
-                          match: { value: "password" },
-                        }}
-                      />
-                    </div>
-                    <div className="mb-3">
-                      <AvField
-                        name="email"
-                        label="E-Mail"
-                        placeholder="Enter Valid Email"
-                        type="email"
-                        errorMessage="Invalid Email"
-                        validate={{
-                          required: { value: true },
-                          email: { value: true },
-                        }}
-                      />
-                    </div>
-                    <div className="mb-3">
-                      <AvField
-                        name="digits"
-                        label="Digits  "
-                        placeholder="Enter Only Digits"
-                        type="number"
-                        errorMessage="Enter Only Digits"
-                        validate={{
-                          required: { value: true },
-                          pattern: {
-                            value: "^[0-9]+$",
-                            errorMessage: "Only Digits",
-                          },
-                        }}
-                      />
-                    </div>
-                    <div className="mb-3">
-                      <AvField
-                        name="number"
-                        label="Number  "
-                        placeholder="Enter Only number"
-                        type="number"
-                        errorMessage="Enter Only Number"
-                        validate={{
-                          required: { value: true },
-                          pattern: {
-                            value: "^[0-9]+$",
-                            errorMessage: "Only Numbers",
-                          },
-                        }}
-                      />
-                    </div>
-                    <div className="mb-3">
-                      <AvField
-                        name="alphanumeric"
-                        label="Alphanumeric  "
-                        placeholder="Enter Only alphanumeric value"
-                        type="text"
-                        errorMessage="Enter Only Alphanumeric"
-                        validate={{
-                          required: { value: true },
-                          pattern: {
-                            value: "^[0-9a-zA-Z]+$",
-                            errorMessage: "Only Alphanumeric",
-                          },
-                        }}
-                      />
-                    </div>
-                    <div className="d-flex flex-wrap gap-2">
-                      <Button
-                        type="submit"
-                        color="primary"
-                        className=""
-                      >
-                        Submit
-                          </Button>{" "}
-                      <Button type="reset" color="secondary" className="">
-                        Cancel
-                          </Button>
-                    </div>
-                  </AvForm>
-                </CardBody>
-              </Card>
-            </Col>
-
-            <Col lg={6}>
-              <Card>
-                <CardBody>
-                  <CardTitle>Range validation</CardTitle>
-                  <CardSubtitle className="mb-3">
-                    Parsley is a availity reactstrap validation. It helps you
-                    provide your users with feedback on their form submission
-                    before sending it to your server.
-                  </CardSubtitle>
-
-                  <AvForm>
-                    <div className="mb-3">
-                      <AvField
-                        name="Min_Length"
-                        label="Min Length  "
-                        placeholder="Min 6 chars"
-                        type="number"
-                        errorMessage="Min 6 chars."
-                        validate={{
-                          required: { value: true },
-                          minLength: { value: 6, errorMessage: "Min 6 chars." },
-                        }}
-                      />
-                    </div>
-                    <div className="mb-3">
-                      <AvField
-                        name="Max_Length"
-                        label="Max Length  "
-                        placeholder="Max 6 chars"
-                        type="number"
-                        errorMessage="Max 6 chars."
-                        validate={{
-                          required: { value: true },
-                          maxLength: { value: 6, errorMessage: "Max 6 chars." },
-                        }}
-                      />
-                    </div>
-                    <div className="mb-3">
-                      <AvField
-                        name="Min_Value"
-                        label="Min Value  "
-                        placeholder="Min 6 Chars"
-                        min={6}
-                        type="number"
-                        errorMessage="Min Value 6"
-                        validate={{
-                          required: { value: true },
-                          min: { value: 6 },
-                        }}
-                      />
-                    </div>
-                    <div className="mb-3">
-                      <AvField
-                        name="Max_Value"
-                        label="Max Value  "
-                        placeholder="max 5 Chars"
-                        max={6}
-                        type="number"
-                        errorMessage="Max Value 6"
-                        validate={{
-                          required: { value: true },
-                          max: { value: 6 },
-                        }}
-                      />
-                    </div>
-                    <div className="mb-3">
-                      <AvField
-                        name="Range_Value"
-                        label="Range Length  "
-                        placeholder="Text between 5 - 10 chars length"
-                        type="number"
-                        errorMessage="range between 5 to 10"
-                        validate={{ required: { value: true } }}
-                      />
-                    </div>
-                    <div className="mb-3">
-                      <AvField
-                        name="Regular_Exp"
-                        label="Regular Exp  "
-                        placeholder="Hex. Color"
-                        type="number"
-                        errorMessage="Hex Value"
-                        validate={{
-                          required: { value: true },
-                          pattern: {
-                            value: "^[#0-9]+$",
-                            errorMessage: "Only Hex Value",
-                          },
-                        }}
-                      />
-                    </div>
-                    <FormGroup className="mb-0">
-                      <div>
-                        <Button type="submit" color="primary" className="ms-1">
-                          Submit
-                        </Button>{" "}
-                        <Button type="reset" color="secondary">
-                          Cancel
+                      <Col lg="2" md="3" sm="4" xs="4">
+                        <Button color="success" type="submit">
+                          زیادکردن
                         </Button>
-                      </div>
-                    </FormGroup>
+                      </Col>
+                      <Col lg="2" md="3" sm="4" xs="4">
+                        <Button color="info" type="submit">
+                          گۆڕین
+                        </Button>
+                      </Col>
+                      <Col lg="2" md="3" sm="4" xs="4">
+                        <Button color="danger" type="submit">
+                          سڕینەوە
+                        </Button>
+                      </Col>
+                    </Row>
                   </AvForm>
                 </CardBody>
               </Card>
