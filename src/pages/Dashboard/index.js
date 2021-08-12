@@ -1,6 +1,9 @@
 import PropTypes from "prop-types"
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import MetaTags from "react-meta-tags"
+import { Link, withRouter } from "react-router-dom"
+import { connect } from "react-redux"
+
 import {
   Container,
   Row,
@@ -14,7 +17,6 @@ import {
   DropdownItem,
   DropdownMenu,
 } from "reactstrap"
-import { Link } from "react-router-dom"
 
 // Custom Scrollbar
 import SimpleBar from "simplebar-react"
@@ -35,6 +37,7 @@ const Dashboard = props => {
   const toggle = () => {
     setMenu(!menu)
   }
+
   return (
     <React.Fragment>
       <div className="page-content">
@@ -43,77 +46,11 @@ const Dashboard = props => {
             Dashboard | Veltrix - Responsive Bootstrap 5 Admin Dashboard
           </title>
         </MetaTags>
-        <Container fluid>
+        <Container fluid style={{ direction: "rtl" }}>
           <div className="page-title-box">
-            <Row className="align-items-center">
-              {" "}
-              {/**  <Col md={8}>
-                <h6 className="page-title">Dashboard</h6>
-                <ol className="breadcrumb m-0">
-                  <li className="breadcrumb-item active">
-                    Welcome to Veltrix Dashboard
-                  </li>
-                </ol>
-              </Col>{" "}*/}
-              {/** <Col md="4">
-                <div className="float-end d-none d-md-block">
-                  <Dropdown isOpen={menu} toggle={toggle}>
-                    <DropdownToggle
-                      color="primary"
-                      className="btn btn-primary dropdown-toggle waves-effect waves-light"
-                    >
-                      <i className="mdi mdi-cog me-2"></i> Settings
-                    </DropdownToggle>
-                    <DropdownMenu right>
-                      <DropdownItem tag="a" href="#">
-                        Action
-                      </DropdownItem>
-                      <DropdownItem tag="a" href="#">
-                        Another action
-                      </DropdownItem>
-                      <DropdownItem tag="a" href="#">
-                        Something else here
-                      </DropdownItem>
-                      <DropdownItem divider />
-                      <DropdownItem tag="a" href="#">
-                        Separated link
-                      </DropdownItem>
-                    </DropdownMenu>
-                  </Dropdown>
-                </div>
-              </Col> */}
-            </Row>
+            <Row className="align-items-center"> </Row>
           </div>
           <Row>
-            <Col xl={3} md={6}>
-              <Card className="mini-stat bg-primary text-white">
-                <CardBody>
-                  <div className="mb-4">
-                    <div className="float-start mini-stat-img me-4">
-                      <img src={servicesIcon1} alt="" />
-                    </div>
-                    <h5 className="font-size-16 text-uppercase mt-0 text-white-50">
-                      گرێبەستی کڕین
-                    </h5>
-                    <h4 className="fw-medium font-size-24">
-                      1,685{" "}
-                      <i className="mdi mdi-arrow-up text-success ms-2"></i>
-                    </h4>
-                    <div className="mini-stat-label bg-success">
-                      <p className="mb-0">+ 12%</p>
-                    </div>
-                  </div>
-                  <div className="pt-2">
-                    <div className="float-end">
-                      <Link to="#" className="text-white-50">
-                        <i className="mdi mdi-arrow-right h5"></i>
-                      </Link>
-                    </div>
-                    <p className="text-white-50 mb-0 mt-1">Since last month</p>
-                  </div>
-                </CardBody>
-              </Card>
-            </Col>
             <Col xl={3} md={6}>
               <Card className="mini-stat bg-primary text-white">
                 <CardBody>
@@ -122,7 +59,9 @@ const Dashboard = props => {
                       <img src={servicesIcon2} alt="" />
                     </div>
                     <h5 className="font-size-16 text-uppercase mt-0 text-white-50">
-                      داواکاری
+                      <Link to="form-uploads" className="dropdown-item">
+                        {props.t("عەرزەکان")}
+                      </Link>{" "}
                     </h5>
                     <h4 className="fw-medium font-size-24">
                       52,368{" "}
@@ -152,7 +91,9 @@ const Dashboard = props => {
                       <img src={servicesIcon3} alt="" />
                     </div>
                     <h5 className="font-size-16 text-uppercase mt-0 text-white-50">
-                      عەرزی فرۆشتن
+                      <Link to="form-validation" className="dropdown-item">
+                        {props.t("زیادکردنی عەرز")}
+                      </Link>{" "}
                     </h5>
                     <h4 className="fw-medium font-size-24">
                       15.8{" "}
@@ -174,6 +115,7 @@ const Dashboard = props => {
                 </CardBody>
               </Card>
             </Col>
+
             <Col xl={3} md={6}>
               <Card className="mini-stat bg-primary text-white">
                 <CardBody>
@@ -182,7 +124,9 @@ const Dashboard = props => {
                       <img src={servicesIcon4} alt="" />
                     </div>
                     <h5 className="font-size-16 text-uppercase mt-0 text-white-50">
-                      عەرزی کرێ
+                      <Link to="form-editors" className="dropdown-item">
+                        {props.t("داواکاری")}
+                      </Link>
                     </h5>
                     <h4 className="fw-medium font-size-24">
                       2436{" "}
@@ -190,6 +134,37 @@ const Dashboard = props => {
                     </h4>
                     <div className="mini-stat-label bg-warning">
                       <p className="mb-0">+ 84%</p>
+                    </div>
+                  </div>
+                  <div className="pt-2">
+                    <div className="float-end">
+                      <Link to="#" className="text-white-50">
+                        <i className="mdi mdi-arrow-right h5"></i>
+                      </Link>
+                    </div>
+                    <p className="text-white-50 mb-0 mt-1">Since last month</p>
+                  </div>
+                </CardBody>
+              </Card>
+            </Col>
+            <Col xl={3} md={6}>
+              <Card className="mini-stat bg-primary text-white">
+                <CardBody>
+                  <div className="mb-4">
+                    <div className="float-start mini-stat-img me-4">
+                      <img src={servicesIcon1} alt="" />
+                    </div>
+                    <h5 className="font-size-16 text-uppercase mt-0 text-white-50">
+                      <Link to="form-wizard" className="dropdown-item">
+                        {props.t("گرێبەستی فرۆشتن")}
+                      </Link>
+                    </h5>
+                    <h4 className="fw-medium font-size-24">
+                      1,685{" "}
+                      <i className="mdi mdi-arrow-up text-success ms-2"></i>
+                    </h4>
+                    <div className="mini-stat-label bg-success">
+                      <p className="mb-0">+ 12%</p>
                     </div>
                   </div>
                   <div className="pt-2">
@@ -213,7 +188,9 @@ const Dashboard = props => {
                       <img src={servicesIcon1} alt="" />
                     </div>
                     <h5 className="font-size-16 text-uppercase mt-0 text-white-50">
-                      قەرزکردن
+                      <Link to="Grebastikre" className="dropdown-item">
+                        {props.t("گرێبەستی کرێ")}
+                      </Link>{" "}
                     </h5>
                     <h4 className="fw-medium font-size-24">
                       1,685{" "}
@@ -242,7 +219,9 @@ const Dashboard = props => {
                       <img src={servicesIcon2} alt="" />
                     </div>
                     <h5 className="font-size-16 text-uppercase mt-0 text-white-50">
-                      سەرمایە
+                      <Link to="Deals" className="dropdown-item">
+                        {props.t("گرێبەستەکانی کرێ")}
+                      </Link>
                     </h5>
                     <h4 className="fw-medium font-size-24">
                       52,368{" "}
@@ -272,7 +251,9 @@ const Dashboard = props => {
                       <img src={servicesIcon3} alt="" />
                     </div>
                     <h5 className="font-size-16 text-uppercase mt-0 text-white-50">
-                      خەرجی بەکاربەر
+                      <Link to="Alldeals" className="dropdown-item">
+                        {props.t("گرێبەستەکان")}
+                      </Link>
                     </h5>
                     <h4 className="fw-medium font-size-24">
                       15.8{" "}
@@ -302,7 +283,9 @@ const Dashboard = props => {
                       <img src={servicesIcon4} alt="" />
                     </div>
                     <h5 className="font-size-16 text-uppercase mt-0 text-white-50">
-                      ڕاپۆرت
+                      <Link to="Allcost" className="dropdown-item">
+                        {props.t("خەرجی و بەکاربەر")}
+                      </Link>
                     </h5>
                     <h4 className="fw-medium font-size-24">
                       2436{" "}

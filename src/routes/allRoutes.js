@@ -12,9 +12,9 @@ import EmailInbox from "../pages/Email/email-inbox"
 import EmailRead from "../pages/Email/email-read"
 import EmailCompose from "../pages/Email/email-compose"
 
-import Emailtemplatealert from "../pages/EmailTemplate/email-template-alert";
-import Emailtemplatebasic from "../pages/EmailTemplate/email-template-basic";
-import Emailtemplatebilling from "../pages/EmailTemplate/email-template-billing";
+import Emailtemplatealert from "../pages/EmailTemplate/email-template-alert"
+import Emailtemplatebasic from "../pages/EmailTemplate/email-template-basic"
+import Emailtemplatebilling from "../pages/EmailTemplate/email-template-billing"
 
 // Authentication related pages
 import Login from "../pages/Authentication/Login"
@@ -57,7 +57,7 @@ import MapsLeaflet from "../pages/Maps/MapsLeaflet"
 import IconDripicons from "../pages/Icons/IconDripicons"
 import IconMaterialdesign from "../pages/Icons/IconMaterialdesign"
 import TypiconsIcon from "../pages/Icons/IconTypicons"
-import IconIon from "../pages/Icons/IconIon";
+import IconIon from "../pages/Icons/IconIon"
 import ThemifyIcon from "../pages/Icons/IconThemify"
 import IconFontawesome from "../pages/Icons/IconFontawesome"
 
@@ -77,7 +77,10 @@ import FormRepeater from "../pages/Forms/FormRepeater"
 import FormUpload from "../pages/Forms/FormUpload"
 import FormWizard from "../pages/Forms/FormWizard"
 import FormXeditable from "../pages/Forms/FormXeditable"
-
+import Grebastakan from "../pages/Forms/Grebastikre"
+import Deals from "../pages/Forms/Hiringdeals"
+import Alldeals from "../pages/Forms/Alldeals"
+import Allcost from "../pages/Forms/AllCost"
 //Ui
 import UiAlert from "../pages/Ui/UiAlert"
 import UiButtons from "../pages/Ui/UiButtons"
@@ -104,13 +107,13 @@ import PagesStarter from "../pages/Utility/pages-starter"
 import PagesMaintenance from "../pages/Utility/pages-maintenance"
 import PagesComingsoon from "../pages/Utility/pages-comingsoon"
 import PagesTimeline from "../pages/Utility/pages-timeline"
-import PagesInvoice from "../pages/Utility/PagesInvoice";
+import PagesInvoice from "../pages/Utility/PagesInvoice"
 import PagesFaqs from "../pages/Utility/pages-faqs"
 import PagesPricing from "../pages/Utility/pages-pricing"
 import Pages404 from "../pages/Utility/pages-404"
 import Pages500 from "../pages/Utility/pages-500"
-import PagesGallery from "../pages/Utility/PagesGallery";
-import PagesDirectory from "../pages/Utility/PagesDirectory";
+import PagesGallery from "../pages/Utility/PagesGallery"
+import PagesDirectory from "../pages/Utility/PagesDirectory"
 
 const userRoutes = [
   { path: "/dashboard", component: Dashboard },
@@ -126,11 +129,11 @@ const userRoutes = [
   { path: "/email-read", component: EmailRead },
   { path: "/email-compose", component: EmailCompose },
 
-    // Email Template
-    { path: "/email-template-alert", component: Emailtemplatealert },
-    { path: "/email-template-basic", component: Emailtemplatebasic },
-    { path: "/email-template-billing", component: Emailtemplatebilling },
-  
+  // Email Template
+  { path: "/email-template-alert", component: Emailtemplatealert },
+  { path: "/email-template-basic", component: Emailtemplatebasic },
+  { path: "/email-template-billing", component: Emailtemplatebilling },
+
   //Charts
   { path: "/apex-charts", component: ChartApex },
   { path: "/chartist-charts", component: ChartistChart },
@@ -167,6 +170,10 @@ const userRoutes = [
   { path: "/form-wizard", component: FormWizard },
   { path: "/form-validation", component: FormValidations },
   { path: "/form-xeditable", component: FormXeditable },
+  { path: "/Grebastikre", component: Grebastakan },
+  { path: "/deals", component: Deals },
+  { path: "/Alldeals", component: Alldeals },
+  { path: "/Allcost", component: Allcost },
 
   // Ui
   { path: "/ui-alerts", component: UiAlert },

@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 
 import {
   Card,
@@ -34,29 +34,29 @@ const FormElements = () => {
     <React.Fragment>
       <div className="page-content">
         <MetaTags>
-          <title>Form Elements | Veltrix - Responsive Bootstrap 5 Admin Dashboard</title>
+          <title>
+            Form Elements | Veltrix - Responsive Bootstrap 5 Admin Dashboard
+          </title>
         </MetaTags>
         <Container fluid={true}>
-          <Breadcrumbs maintitle="Veltrix" title="Form" breadcrumbItem="Form Elements" />
+          <Breadcrumbs
+            maintitle="Veltrix"
+            title="Form"
+            breadcrumbItem="Form Elements"
+          />
 
           <Row>
             <Col>
               <Card>
                 <CardBody>
-                  <CardTitle className="h4">Textual inputs</CardTitle>
                   <p className="card-title-desc">
                     Here are examples of <code>.form-control</code> applied to
                     each textual HTML5 <code>&lt;input&gt;</code>{" "}
+                    <CardTitle className="h4">Textual inputs</CardTitle>
                     <code>type</code>.
                   </p>
 
                   <Row className="mb-3">
-                    <label
-                      htmlFor="example-text-input"
-                      className="col-md-2 col-form-label"
-                    >
-                      Text
-                    </label>
                     <div className="col-md-10">
                       <input
                         className="form-control"
@@ -286,7 +286,6 @@ const FormElements = () => {
               </Card>
             </Col>
           </Row>
-
         </Container>
       </div>
     </React.Fragment>

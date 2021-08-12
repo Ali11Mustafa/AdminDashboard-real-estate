@@ -79,14 +79,10 @@ const Navbar = props => {
             >
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <Link
-                    className="nav-link"
-                    to="dashboard"
-                  >
+                  <Link className="nav-link" to="dashboard">
                     <i className="ti-home me-2" />
                     {props.t("Dashboard")} {props.menuOpen}
                   </Link>
-
                 </li>
 
                 <li className="nav-item dropdown mega-dropdown">
@@ -222,7 +218,9 @@ const Navbar = props => {
                         <Link to="email-read" className="dropdown-item">
                           {props.t("Read Email")}
                         </Link>
-                        <Link to="/email-compose" className="dropdown-item">{props.t("Email Compose")} </Link>
+                        <Link to="/email-compose" className="dropdown-item">
+                          {props.t("Email Compose")}{" "}
+                        </Link>
                       </div>
                     </div>
                     <Link to="calendar" className="dropdown-item">
@@ -272,6 +270,18 @@ const Navbar = props => {
                         <Link to="form-mask" className="dropdown-item">
                           {props.t("Form Mask")}
                         </Link>
+                        <Link to="Grebastikre" className="dropdown-item">
+                          {props.t("Grebastikre")}
+                        </Link>
+                        <Link to="Deals" className="dropdown-item">
+                          {props.t("Deals")}
+                        </Link>
+                        <Link to="Alldeals" className="dropdown-item">
+                          {props.t("Alldeals")}
+                        </Link>
+                        <Link to="Allcost" className="dropdown-item">
+                          {props.t("Allcost")}
+                        </Link>
                       </div>
                     </div>
                     <div className="dropdown">
@@ -299,13 +309,14 @@ const Navbar = props => {
                         </Link>
 
                         <Link to="/chartjs-charts" className="dropdown-item">
-                          {" "}{props.t("Chartjs Chart")}</Link>
+                          {" "}
+                          {props.t("Chartjs Chart")}
+                        </Link>
 
                         <Link to="apex-charts" className="dropdown-item">
                           {" "}
                           {props.t("Apex charts")}
                         </Link>
-
 
                         <Link to="sparkline-charts" className="dropdown-item">
                           {" "}
@@ -366,16 +377,21 @@ const Navbar = props => {
                           {props.t("Font awesome")}{" "}
                         </Link>
 
-                        <Link to="/icons-ion" className="dropdown-item">Ion Icons</Link>
+                        <Link to="/icons-ion" className="dropdown-item">
+                          Ion Icons
+                        </Link>
 
-                        <Link to="/icons-themify" className="dropdown-item">Themify Icons</Link>
+                        <Link to="/icons-themify" className="dropdown-item">
+                          Themify Icons
+                        </Link>
 
                         <Link to="icons-dripicons" className="dropdown-item">
                           {props.t("Dripicons")}
                         </Link>
 
-                        <Link to="/icons-typicons" className="dropdown-item">Typicons Icons</Link>
-
+                        <Link to="/icons-typicons" className="dropdown-item">
+                          Typicons Icons
+                        </Link>
                       </div>
                     </div>
                     <div className="dropdown">
@@ -419,7 +435,10 @@ const Navbar = props => {
                     {props.t("Authentication")}
                   </Link>
                   <div
-                    className={classname("dropdown-menu mega-dropdown-menu px-2 dropdown-mega-menu-lg", { show: auth })}
+                    className={classname(
+                      "dropdown-menu mega-dropdown-menu px-2 dropdown-mega-menu-lg",
+                      { show: auth }
+                    )}
                   >
                     <div className="row">
                       <div className="col-lg-6">
@@ -449,7 +468,10 @@ const Navbar = props => {
                           <Link to="page-recoverpw-2" className="dropdown-item">
                             {props.t("Recover Password 2")}
                           </Link>
-                          <Link to="auth-lock-screen-2" className="dropdown-item">
+                          <Link
+                            to="auth-lock-screen-2"
+                            className="dropdown-item"
+                          >
                             {props.t("Lock Screen 2")}
                           </Link>
                         </div>
@@ -467,14 +489,16 @@ const Navbar = props => {
                       setextra(!extra)
                     }}
                   >
-                    <i className="ti-support me-2"></i>{" "}
-                    {props.t("Extra pages")}
+                    <i className="ti-support me-2"></i> {props.t("Extra pages")}
                   </Link>
 
                   <div
-                    className={classname("dropdown-menu mega-dropdown-menu px-2 dropdown-mega-menu-lg", {
-                      show: extra,
-                    })}
+                    className={classname(
+                      "dropdown-menu mega-dropdown-menu px-2 dropdown-mega-menu-lg",
+                      {
+                        show: extra,
+                      }
+                    )}
                   >
                     <div className="row">
                       <div className="col-lg-6">
@@ -485,28 +509,49 @@ const Navbar = props => {
                           <Link to="pages-starter" className="dropdown-item">
                             {props.t("Starter Page")}
                           </Link>
-                          <Link to="pages-directory" className="dropdown-item">{props.t("Directory")}</Link>
-                          <Link to="pages-404" className="dropdown-item">{props.t("Error 404")}</Link>
-                          <Link to="pages-500" className="dropdown-item">{props.t("Error 500")}</Link>
+                          <Link to="pages-directory" className="dropdown-item">
+                            {props.t("Directory")}
+                          </Link>
+                          <Link to="pages-404" className="dropdown-item">
+                            {props.t("Error 404")}
+                          </Link>
+                          <Link to="pages-500" className="dropdown-item">
+                            {props.t("Error 500")}
+                          </Link>
                         </div>
                       </div>
                       <div className="col-lg-6">
                         <div>
-                          <Link to="pages-pricing" className="dropdown-item">{props.t("Pricing")}</Link>
-                          <Link to="pages-gallery" className="dropdown-item">{props.t("Gallery")}</Link>
-                          <Link to="pages-maintenance" className="dropdown-item">{props.t("Maintenance")}</Link>
-                          <Link to="pages-comingsoon" className="dropdown-item">{props.t("Coming Soon")}</Link>
-                          <Link to="pages-faqs" className="dropdown-item">{props.t("FAQs")}</Link>
+                          <Link to="pages-pricing" className="dropdown-item">
+                            {props.t("Pricing")}
+                          </Link>
+                          <Link to="pages-gallery" className="dropdown-item">
+                            {props.t("Gallery")}
+                          </Link>
+                          <Link
+                            to="pages-maintenance"
+                            className="dropdown-item"
+                          >
+                            {props.t("Maintenance")}
+                          </Link>
+                          <Link to="pages-comingsoon" className="dropdown-item">
+                            {props.t("Coming Soon")}
+                          </Link>
+                          <Link to="pages-faqs" className="dropdown-item">
+                            {props.t("FAQs")}
+                          </Link>
                         </div>
                       </div>
                     </div>
-
                   </div>
-
                 </li>
 
                 <li className="nav-item dropdown">
-                  <Link className="nav-link dropdown-toggle arrow-none" to="#" id="topnav-emailtemplates" role="button"
+                  <Link
+                    className="nav-link dropdown-toggle arrow-none"
+                    to="#"
+                    id="topnav-emailtemplates"
+                    role="button"
                     onClick={e => {
                       e.preventDefault()
                       setemail(!email)
@@ -514,30 +559,23 @@ const Navbar = props => {
                   >
                     <i className="ti-bookmark-alt me-2"></i>Email Templates
                   </Link>
-                  <div className={classname("dropdown-menu", {
-                    show: email,
-                  })} aria-labelledby="topnav-emailtemplates">
-                    <Link
-                      to="email-template-basic"
-                      className="dropdown-item"
-                    >
+                  <div
+                    className={classname("dropdown-menu", {
+                      show: email,
+                    })}
+                    aria-labelledby="topnav-emailtemplates"
+                  >
+                    <Link to="email-template-basic" className="dropdown-item">
                       {props.t("Basic Action")}
                     </Link>
-                    <Link
-                      to="email-template-alert"
-                      className="dropdown-item"
-                    >
+                    <Link to="email-template-alert" className="dropdown-item">
                       {props.t("Alert Email")}
                     </Link>
-                    <Link
-                      to="email-template-billing"
-                      className="dropdown-item"
-                    >
+                    <Link to="email-template-billing" className="dropdown-item">
                       {props.t("Billing Email")}
                     </Link>
                   </div>
                 </li>
-
               </ul>
             </Collapse>
           </nav>
