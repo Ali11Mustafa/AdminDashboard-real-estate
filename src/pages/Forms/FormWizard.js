@@ -15,10 +15,17 @@ import {
   TabPane,
   Label,
   FormGroup,
+  Dropdown,
+  DropdownMenu,
+  DropdownItem,
+  DropdownToggle,
+  ButtonDropdown,
+  InputGroup,
 } from "reactstrap"
 
 import classnames from "classnames"
 import { Link } from "react-router-dom"
+import Flatpickr from "react-flatpickr"
 
 //Import Breadcrumb
 import Breadcrumbs from "../../components/Common/Breadcrumb"
@@ -28,6 +35,7 @@ const FormWizard = () => {
   const [activeTabProgress, setactiveTabProgress] = useState(1)
   const [progressValue, setprogressValue] = useState(25)
   const [activeTabVartical, setoggleTabVertical] = useState(1)
+  const [singlebtn1, setSinglebtn1] = useState(false)
 
   function toggleTab(tab) {
     if (activeTab !== tab) {
@@ -145,14 +153,208 @@ const FormWizard = () => {
                         <TabPane tabId={1}>
                           <Form>
                             <Row>
-                              <Col md={3}>
+                              <Col md={6}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="txtLastNameBilling"
+                                      className="col-lg-11 col-form-label"
+                                    >
+                                      ناوی خاوەن موڵک
+                                    </label>
+                                    <Input
+                                      id="txtLastNameBilling"
+                                      name="txtLastNameBilling"
+                                      type="text"
+                                      className="form-control"
+                                    />
+                                  </div>
+                                </Row>
+                              </Col>
+                              <Col md={6}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="txtLastNameBilling"
+                                      className="col-lg-11 col-form-label"
+                                    >
+                                      ناوی کڕیار
+                                    </label>
+                                    <Input
+                                      id="txtLastNameBilling"
+                                      name="txtLastNameBilling"
+                                      type="text"
+                                      className="form-control"
+                                    />
+                                  </div>
+                                </Row>
+                              </Col>
+                            </Row>
+                            <Row>
+                              <Col md={6}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="txtLastNameBilling"
+                                      className="col-lg-11 col-form-label"
+                                    >
+                                      ژمارەی تەلەفۆنی خاوەن موڵک
+                                    </label>
+                                    <Input
+                                      id="txtLastNameBilling"
+                                      name="txtLastNameBilling"
+                                      type="text"
+                                      className="form-control"
+                                    />
+                                  </div>
+                                </Row>
+                              </Col>
+                              <Col md={6}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="txtLastNameBilling"
+                                      className="col-lg-11 col-form-label"
+                                    >
+                                      ژمارەی تەلەفۆنی کڕیار
+                                    </label>
+                                    <Input
+                                      id="txtLastNameBilling"
+                                      name="txtLastNameBilling"
+                                      type="text"
+                                      className="form-control"
+                                    />
+                                  </div>
+                                </Row>
+                              </Col>
+                            </Row>
+
+                            <Row>
+                              <Col md={6}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="txtLastNameBilling"
+                                      className="col-lg-11 col-form-label"
+                                    >
+                                      ناونیشانی خاوەن موڵک
+                                    </label>
+                                    <Input
+                                      id="txtLastNameBilling"
+                                      name="txtLastNameBilling"
+                                      type="text"
+                                      className="form-control"
+                                    />
+                                  </div>
+                                </Row>
+                              </Col>
+                              <Col md={6}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="txtLastNameBilling"
+                                      className="col-lg-11 col-form-label"
+                                    >
+                                      ناونیشانی کڕیار
+                                    </label>
+                                    <Input
+                                      id="txtLastNameBilling"
+                                      name="txtLastNameBilling"
+                                      type="text"
+                                      className="form-control"
+                                    />
+                                  </div>
+                                </Row>
+                              </Col>
+                            </Row>
+
+                            <Row>
+                              <Col md={6}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="txtLastNameBilling"
+                                      className="col-lg-11 col-form-label"
+                                    >
+                                      ناسنامە/شوێن
+                                    </label>
+                                    <Input
+                                      id="txtLastNameBilling"
+                                      name="txtLastNameBilling"
+                                      type="text"
+                                      className="form-control"
+                                    />
+                                  </div>
+                                </Row>
+                              </Col>
+                              <Col md={6}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="txtLastNameBilling"
+                                      className="col-lg-11 col-form-label"
+                                    >
+                                      ناسنامە/شوێن
+                                    </label>
+                                    <Input
+                                      id="txtLastNameBilling"
+                                      name="txtLastNameBilling"
+                                      type="text"
+                                      className="form-control"
+                                    />
+                                  </div>
+                                </Row>
+                              </Col>
+                            </Row>
+                          </Form>
+                        </TabPane>
+                        <TabPane tabId={2}>
+                          <Form>
+                            <Row>
+                              <Col md={4}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="txtLastNameBilling"
+                                      className="col-lg-11 col-form-label"
+                                    >
+                                      ئەم گرێبەستە بە هاوبەشی
+                                    </label>
+                                    <Input
+                                      id="txtLastNameBilling"
+                                      name="txtLastNameBilling"
+                                      type="text"
+                                      className="form-control"
+                                    />
+                                  </div>
+                                </Row>
+                              </Col>
+                              <Col md={4}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="txtLastNameBilling"
+                                      className="col-lg-11 col-form-label"
+                                    >
+                                      لەگەڵ
+                                    </label>
+                                    <Input
+                                      id="txtLastNameBilling"
+                                      name="txtLastNameBilling"
+                                      type="text"
+                                      className="form-control"
+                                    />
+                                  </div>
+                                </Row>
+                              </Col>
+                              <Col md={2}>
                                 <Row className="mb-3">
                                   <div className="col-lg-9">
                                     <label
                                       htmlFor="txtFirstNameBilling"
                                       className="col-lg-11 col-form-label"
                                     >
-                                      مۆبایل
+                                      بڕی
                                     </label>
                                     <Input
                                       id="txtFirstNameBilling"
@@ -163,7 +365,381 @@ const FormWizard = () => {
                                   </div>
                                 </Row>
                               </Col>
+                              <Col md={2}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="ddlCreditCardType"
+                                      className="col-lg-11 col-form-label"
+                                    >
+                                      وەرگیرا
+                                    </label>
+                                    <Input
+                                      type="select"
+                                      id="ddlCreditCardType"
+                                      name="ddlCreditCardType"
+                                      className="form-select"
+                                    >
+                                      <option value="MC">دۆلار</option>
+                                      <option value="DI">دینار</option>
+                                    </Input>
+                                  </div>
+                                </Row>
+                              </Col>
+                            </Row>
+                            <Row className="mt-3 mb-3">
+                              <Col lg={12}>
+                                <p style={{ direction: "rtl" }}>
+                                  لایەنی یەکەم دانی پیادەنێ بە فرۆشتنی ئەم
+                                  موڵکەی خوارەوە بە لایەنی دووەم بە پێی ئەم
+                                  خاڵانەی خوارەوە کە هاتووە
+                                </p>
+                              </Col>
+                            </Row>
+                            <Row className="mt-3 mb-3">
+                              <Col md={4}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="ddlCreditCardType"
+                                      className="col-lg-11 col-form-label"
+                                    >
+                                      جۆری موڵک
+                                    </label>
+                                    <Input
+                                      type="select"
+                                      id="ddlCreditCardType"
+                                      name="ddlCreditCardType"
+                                      className="form-select"
+                                    >
+                                      <option>خانوو</option>
+                                      <option>زەوی</option>
+                                      <option>کۆگا</option>
+                                      <option>دوکان</option>
+                                      <option>ڤێلا</option>
+                                      <option>موساتەحە</option>
+                                      <option>شوقە</option>
+                                      <option>شوشتنگەی ئۆتۆمبێل</option>
+                                      <option>هۆتێل</option>
+                                      <option>زەوی کشتوكاڵی</option>
+                                      <option>زەوی نیشتەجێبوون</option>
+                                      <option>زەوی بازرگانی</option>
+                                      <option>باڵاخانە</option>
+                                      <option>ئۆفیس</option>
+                                      <option>پێشانگا</option>
+                                      <option>گەراجی ئۆتۆمبێل</option>
+                                    </Input>
+                                  </div>
+                                </Row>
+                              </Col>
+                              <Col md={4}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="ddlCreditCardType"
+                                      className="col-lg-11 col-form-label"
+                                    >
+                                      ژمارەی موڵک
+                                    </label>
+                                    <Input
+                                      type="text"
+                                      id="ddlCreditCardType"
+                                      name="ddlCreditCardType"
+                                    ></Input>
+                                  </div>
+                                </Row>
+                              </Col>
+                              <Col md={2}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="ddlCreditCardType"
+                                      className="col-lg-11 col-form-label"
+                                    >
+                                      ناو-شوێن-گەڕەک
+                                    </label>
+                                    <Input
+                                      type="select"
+                                      id="ddlCreditCardType"
+                                      name="ddlCreditCardType"
+                                      className="form-select"
+                                    >
+                                      <option>هەڤاڵان</option>
+                                      <option>کەسنەزان</option>
+                                      <option>باداوە</option>
+                                    </Input>
+                                  </div>
+                                </Row>
+                              </Col>
+                              <Col md={2}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="ddlCreditCardType"
+                                      className="col-lg-11 col-form-label"
+                                    >
+                                      ڕووبەر م٢
+                                    </label>
+                                    <Input
+                                      type="text"
+                                      id="ddlCreditCardType"
+                                      name="ddlCreditCardType"
+                                    ></Input>
+                                  </div>
+                                </Row>
+                              </Col>
+                            </Row>
+                            <Row className="mt-3 mb-3">
+                              <Col md={4}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="txtLastNameBilling"
+                                      className="col-lg-11 col-form-label"
+                                    >
+                                      بڕی ئەو پارەیەیی لەسەری ڕێککەوتوون
+                                    </label>
+                                    <Input
+                                      id="txtLastNameBilling"
+                                      name="txtLastNameBilling"
+                                      type="text"
+                                      className="form-control"
+                                    />
+                                  </div>
+                                </Row>
+                              </Col>
+                              <Col md={2}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="txtLastNameBilling"
+                                      className="col-lg-11 col-form-label"
+                                    >
+                                      جۆری دراو
+                                    </label>
+                                    <Input
+                                      type="select"
+                                      id="ddlCreditCardType"
+                                      name="ddlCreditCardType"
+                                      className="form-select"
+                                    >
+                                      <option value="MC">دۆلار</option>
+                                      <option value="DI">دینار</option>
+                                    </Input>
+                                  </div>
+                                </Row>
+                              </Col>
+                              <Col md={4}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="txtLastNameBilling"
+                                      className="col-lg-11 col-form-label"
+                                    >
+                                      لایەنی یەکەم دانی پیادەنێ بڕی
+                                    </label>
+                                    <Input
+                                      id="txtLastNameBilling"
+                                      name="txtLastNameBilling"
+                                      type="text"
+                                      className="form-control"
+                                    />
+                                  </div>
+                                </Row>
+                              </Col>
+                              <Col md={2}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="txtLastNameBilling"
+                                      className="col-lg-12 col-form-label"
+                                    >
+                                      وەرگرتووە
+                                    </label>
+                                    <Input
+                                      type="select"
+                                      id="ddlCreditCardType"
+                                      name="ddlCreditCardType"
+                                      className="form-select"
+                                    >
+                                      <option value="MC">دۆلار</option>
+                                      <option value="DI">دینار</option>
+                                    </Input>
+                                  </div>
+                                </Row>
+                              </Col>
+                            </Row>
+                            <Row className="mt-3 mb-3">
+                              <Col lg={12}>
+                                <p style={{ direction: "rtl" }}>
+                                  بڕی ئەو پارەیەیی کە ماوە لە کاتی تەواوکردنی
+                                  ئیش و کارەکانی بەڕێوەبەرایەتی تاپۆ وەردەگیرێت
+                                </p>
+                              </Col>
+                            </Row>
+
+                            <Row className="mt-3 mb-3">
+                              <Col md={4}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-12">
+                                    <p></p>
+                                    <br />
+                                    ئەگەر لایەنی یەکەم لە فرۆشتنەکەی یان
+                                    دانپێدانان پەشیمان ببێتەوە دەبێت
+                                  </div>
+                                </Row>
+                              </Col>
+                              <Col md={2}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="txtLastNameBilling"
+                                      className="col-lg-11 col-form-label"
+                                    >
+                                      بڕی
+                                    </label>
+                                    <Input
+                                      id="txtLastNameBilling"
+                                      name="txtLastNameBilling"
+                                      type="text"
+                                      className="form-control"
+                                    />
+                                  </div>
+                                </Row>
+                              </Col>
+                              <Col md={2}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="txtLastNameBilling"
+                                      className="col-lg-11 col-form-label"
+                                    >
+                                      جۆری دراو
+                                    </label>
+                                    <Input
+                                      type="select"
+                                      id="ddlCreditCardType"
+                                      name="ddlCreditCardType"
+                                      className="form-select"
+                                    >
+                                      <option value="MC">دۆلار</option>
+                                      <option value="DI">دینار</option>
+                                    </Input>
+                                  </div>
+                                </Row>
+                              </Col>
+                              <Col md={4}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-12">
+                                    <p></p>
+                                    <br />
+                                    بدات بە لایەنی دووەم بێ پێویستبوون بە
+                                    ئاگادارکردنەوەی ڕەسمی
+                                  </div>
+                                </Row>
+                              </Col>
+                            </Row>
+                            <Row className="mt-3 mb-3">
+                              <Col lg={11}>
+                                <p style={{ direction: "rtl" }}>
+                                  لایەنی دووەم کڕیار دان بە ڕازیبوون لەسەر کڕینی
+                                  موڵکی ناوبراو دەنێت بە پێی ئەو خاڵانەی کە
+                                  لەسەرەوە هاتوون و بەڵین دەدات کە ئەو بڕە
+                                  پارەییەی ماوە بدات بە لایەنی یەکەم پاش بەناو
+                                  کردن لە بەڕێوەبەرایەتی خانوو
+                                </p>
+                              </Col>
+                            </Row>
+                            <Row className="mt-3 mb-3">
+                              {" "}
+                              <Col md={4}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-12">
+                                    <p></p>
+                                    <br />
+                                    ئەگەر لە کڕینەکەی پەشیمان بووەوە دەبێت بڕی
+                                  </div>
+                                </Row>
+                              </Col>
                               <Col md={3}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="txtLastNameBilling"
+                                      className="col-lg-11 col-form-label"
+                                    >
+                                      بڕی
+                                    </label>
+                                    <Input
+                                      id="txtLastNameBilling"
+                                      name="txtLastNameBilling"
+                                      type="text"
+                                      className="form-control"
+                                    />
+                                  </div>
+                                </Row>
+                              </Col>
+                              <Col md={4}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-12">
+                                    <p></p>
+                                    <br />
+                                    بدات بە لایەنی دووەم بێ پێویستبوون بە
+                                    ئاگادارکردنەوەی ڕەسمی
+                                  </div>
+                                </Row>
+                              </Col>
+                            </Row>
+                            <Row style={{ direction: "rtl" }}>
+                              <Col md={2}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-12">
+                                    <p></p>
+                                    <br />
+                                    بەرواری چۆڵکردنی موڵک
+                                  </div>
+                                </Row>
+                              </Col>
+                              <Col md={3}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="txtLastNameBilling"
+                                      className="col-lg-11 col-form-label"
+                                    >
+                                      بەروار
+                                    </label>
+                                    <InputGroup>
+                                      <Flatpickr
+                                        className="form-control d-block"
+                                        placeholder="dd M,yyyy"
+                                        options={{
+                                          altInput: true,
+                                          altFormat: "F j, Y",
+                                          dateFormat: "Y-m-d",
+                                        }}
+                                      />
+                                    </InputGroup>
+                                  </div>
+                                </Row>
+                              </Col>
+                              <Col md={6}></Col>
+                            </Row>
+                            <Row className="mt-3 mb-3">
+                              <Col lg={12}>
+                                <p style={{ direction: "rtl" }}>
+                                  تێبینی: پاش واژووکردن دەبێت مافی کۆمپانیای
+                                  عەقارات بدرێت و ناگەڕیتەوە
+                                </p>
+                              </Col>
+                            </Row>
+                          </Form>
+                        </TabPane>
+
+                        <TabPane tabId={3}>
+                          <Form>
+                            <Row>
+                              <Col md={4}>
                                 <Row className="mb-3">
                                   <div className="col-lg-9">
                                     <label
@@ -181,14 +757,15 @@ const FormWizard = () => {
                                   </div>
                                 </Row>
                               </Col>
-                              <Col md={3}>
+
+                              <Col md={4}>
                                 <Row className="mb-3">
                                   <div className="col-lg-9">
                                     <label
                                       htmlFor="txtLastNameBilling"
                                       className="col-lg-11 col-form-label"
                                     >
-                                      شایەت
+                                      شایەتی یەکەم
                                     </label>
                                     <Input
                                       id="txtLastNameBilling"
@@ -199,14 +776,14 @@ const FormWizard = () => {
                                   </div>
                                 </Row>
                               </Col>
-                              <Col md={3}>
+                              <Col md={4}>
                                 <Row className="mb-3">
                                   <div className="col-lg-9">
                                     <label
                                       htmlFor="txtLastNameBilling"
                                       className="col-lg-11 col-form-label"
                                     >
-                                      شایەت
+                                      شایەتی دووەم
                                     </label>
                                     <Input
                                       id="txtLastNameBilling"
@@ -219,14 +796,14 @@ const FormWizard = () => {
                               </Col>
                             </Row>
                             <Row>
-                              <Col md={3}>
+                              <Col md={4}>
                                 <Row className="mb-3">
                                   <div className="col-lg-9">
                                     <label
                                       htmlFor="txtLastNameBilling"
                                       className="col-lg-11 col-form-label"
                                     >
-                                      وەکیل
+                                      ژ.مۆبایلی شایەتی یەکەم
                                     </label>
                                     <Input
                                       id="txtLastNameBilling"
@@ -237,14 +814,14 @@ const FormWizard = () => {
                                   </div>
                                 </Row>
                               </Col>
-                              <Col md={3}>
+                              <Col md={4}>
                                 <Row className="mb-3">
                                   <div className="col-lg-9">
                                     <label
                                       htmlFor="txtLastNameBilling"
                                       className="col-lg-11 col-form-label"
                                     >
-                                      لایەنی دووەم
+                                      ژ.مۆبایلی شایەتی دووەم
                                     </label>
                                     <Input
                                       id="txtLastNameBilling"
@@ -255,7 +832,11 @@ const FormWizard = () => {
                                   </div>
                                 </Row>
                               </Col>
-                              <Col md={3}>
+                              <Col md={4}></Col>
+                            </Row>
+
+                            <Row>
+                              <Col md={4}>
                                 <Row className="mb-3">
                                   <div className="col-lg-9">
                                     <label
@@ -273,14 +854,14 @@ const FormWizard = () => {
                                   </div>
                                 </Row>
                               </Col>
-                              <Col md={3}>
+                              <Col md={4}>
                                 <Row className="mb-3">
                                   <div className="col-lg-9">
                                     <label
                                       htmlFor="txtLastNameBilling"
                                       className="col-lg-11 col-form-label"
                                     >
-                                      مۆبایل
+                                      لایەنی دووەم
                                     </label>
                                     <Input
                                       id="txtLastNameBilling"
@@ -291,10 +872,90 @@ const FormWizard = () => {
                                   </div>
                                 </Row>
                               </Col>
+                              <Col md={4}></Col>
                             </Row>
 
                             <Row>
-                              <Col md={3}>
+                              <Col md={4}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="txtLastNameBilling"
+                                      className="col-lg-11 col-form-label"
+                                    >
+                                      وەکیلی یەکەم
+                                    </label>
+                                    <Input
+                                      id="txtLastNameBilling"
+                                      name="txtLastNameBilling"
+                                      type="text"
+                                      className="form-control"
+                                    />
+                                  </div>
+                                </Row>
+                              </Col>
+                              <Col md={4}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="txtLastNameBilling"
+                                      className="col-lg-11 col-form-label"
+                                    >
+                                      وەکیلی دووەم
+                                    </label>
+                                    <Input
+                                      id="txtLastNameBilling"
+                                      name="txtLastNameBilling"
+                                      type="text"
+                                      className="form-control"
+                                    />
+                                  </div>
+                                </Row>
+                              </Col>
+                              <Col md={4}></Col>
+                            </Row>
+                            <Row>
+                              {" "}
+                              <Col md={4}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="txtLastNameBilling"
+                                      className="col-lg-11 col-form-label"
+                                    >
+                                      ژمارە
+                                    </label>
+                                    <Input
+                                      id="txtLastNameBilling"
+                                      name="txtLastNameBilling"
+                                      type="text"
+                                      className="form-control"
+                                    />
+                                  </div>
+                                </Row>
+                              </Col>
+                              <Col md={4}>
+                                <Row className="mb-3">
+                                  <div className="col-lg-9">
+                                    <label
+                                      htmlFor="txtLastNameBilling"
+                                      className="col-lg-11 col-form-label"
+                                    >
+                                      ژمارە
+                                    </label>
+                                    <Input
+                                      id="txtLastNameBilling"
+                                      name="txtLastNameBilling"
+                                      type="text"
+                                      className="form-control"
+                                    />
+                                  </div>
+                                </Row>
+                              </Col>
+                              <Col md={4}></Col>
+                            </Row>
+                            <Row>
+                              <Col md={4}>
                                 <Row className="mb-3">
                                   <div className="col-lg-9">
                                     <label
@@ -312,14 +973,14 @@ const FormWizard = () => {
                                   </div>
                                 </Row>
                               </Col>
-                              <Col md={3}>
+                              <Col md={4}>
                                 <Row className="mb-3">
                                   <div className="col-lg-9">
                                     <label
                                       htmlFor="txtLastNameBilling"
                                       className="col-lg-11 col-form-label"
                                     >
-                                      ژمارە
+                                      ناوی تەواو
                                     </label>
                                     <Input
                                       id="txtLastNameBilling"
@@ -330,46 +991,11 @@ const FormWizard = () => {
                                   </div>
                                 </Row>
                               </Col>
-                              <Col md={3}>
-                                <Row className="mb-3">
-                                  <div className="col-lg-9">
-                                    <label
-                                      htmlFor="txtLastNameBilling"
-                                      className="col-lg-11 col-form-label"
-                                    >
-                                      ژمارە
-                                    </label>
-                                    <Input
-                                      id="txtLastNameBilling"
-                                      name="txtLastNameBilling"
-                                      type="text"
-                                      className="form-control"
-                                    />
-                                  </div>
-                                </Row>
-                              </Col>
-                              <Col md={3}>
-                                <Row className="mb-3">
-                                  <div className="col-lg-9">
-                                    <label
-                                      htmlFor="txtLastNameBilling"
-                                      className="col-lg-11 col-form-label"
-                                    >
-                                      وەکیل
-                                    </label>
-                                    <Input
-                                      id="txtLastNameBilling"
-                                      name="txtLastNameBilling"
-                                      type="text"
-                                      className="form-control"
-                                    />
-                                  </div>
-                                </Row>
-                              </Col>
+                              <Col md={4}></Col>
                             </Row>
 
                             <Row>
-                              <Col md={6}>
+                              <Col md={8}>
                                 <Row className="mb-3">
                                   <div className="col-lg-9">
                                     <label
@@ -381,272 +1007,6 @@ const FormWizard = () => {
                                     <Input
                                       id="txtLastNameBilling"
                                       name="txtLastNameBilling"
-                                      type="text"
-                                      className="form-control"
-                                    />
-                                  </div>
-                                </Row>
-                              </Col>
-
-                              <Col md={3}>
-                                <Row className="mb-3">
-                                  <div className="col-lg-9">
-                                    <label
-                                      htmlFor="txtLastNameBilling"
-                                      className="col-lg-11 col-form-label"
-                                    >
-                                      مۆبایل
-                                    </label>
-                                    <Input
-                                      id="txtLastNameBilling"
-                                      name="txtLastNameBilling"
-                                      type="text"
-                                      className="form-control"
-                                    />
-                                  </div>
-                                </Row>
-                              </Col>
-                              <Col md={3}>
-                                <Row className="mb-3">
-                                  <div className="col-lg-9">
-                                    <label
-                                      htmlFor="txtLastNameBilling"
-                                      className="col-lg-11 col-form-label"
-                                    >
-                                      مۆبایل
-                                    </label>
-                                    <Input
-                                      id="txtLastNameBilling"
-                                      name="txtLastNameBilling"
-                                      type="text"
-                                      className="form-control"
-                                    />
-                                  </div>
-                                </Row>
-                              </Col>
-                            </Row>
-                          </Form>
-                        </TabPane>
-                        <TabPane tabId={2}>
-                          <Form>
-                            <Row>
-                              <Col md={6}>
-                                <Row className="mb-3">
-                                  <label
-                                    htmlFor="txtFirstNameShipping"
-                                    className="col-lg-3 col-form-label"
-                                  >
-                                    PAN Card
-                                  </label>
-                                  <div className="col-lg-9">
-                                    <Input
-                                      id="txtFirstNameShipping"
-                                      name="txtFirstNameShipping"
-                                      type="text"
-                                      className="form-control"
-                                    />
-                                  </div>
-                                </Row>
-                              </Col>
-                              <Col md={6}>
-                                <Row className="mb-3">
-                                  <label
-                                    htmlFor="txtLastNameShipping"
-                                    className="col-lg-3 col-form-label"
-                                  >
-                                    VAT/TIN No.
-                                  </label>
-                                  <div className="col-lg-9">
-                                    <Input
-                                      id="txtLastNameShipping"
-                                      name="txtLastNameShipping"
-                                      type="text"
-                                      className="form-control"
-                                    />
-                                  </div>
-                                </Row>
-                              </Col>
-                            </Row>
-                            <Row>
-                              <Col md={6}>
-                                <Row className="mb-3">
-                                  <label
-                                    htmlFor="txtCompanyShipping"
-                                    className="col-lg-3 col-form-label"
-                                  >
-                                    CST No.
-                                  </label>
-                                  <div className="col-lg-9">
-                                    <Input
-                                      id="txtCompanyShipping"
-                                      name="txtCompanyShipping"
-                                      type="text"
-                                      className="form-control"
-                                    />
-                                  </div>
-                                </Row>
-                              </Col>
-                              <Col md={6}>
-                                <Row className="mb-3">
-                                  <label
-                                    htmlFor="txtEmailAddressShipping"
-                                    className="col-lg-3 col-form-label"
-                                  >
-                                    Service Tax No.
-                                  </label>
-                                  <div className="col-lg-9">
-                                    <Input
-                                      id="txtEmailAddressShipping"
-                                      name="txtEmailAddressShipping"
-                                      type="text"
-                                      className="form-control"
-                                    />
-                                  </div>
-                                </Row>
-                              </Col>
-                            </Row>
-
-                            <Row>
-                              <Col md={6}>
-                                <Row className="mb-3">
-                                  <label
-                                    htmlFor="txtCityShipping"
-                                    className="col-lg-3 col-form-label"
-                                  >
-                                    Company UIN
-                                  </label>
-                                  <div className="col-lg-9">
-                                    <Input
-                                      id="txtCityShipping"
-                                      name="txtCityShipping"
-                                      type="text"
-                                      className="form-control"
-                                    />
-                                  </div>
-                                </Row>
-                              </Col>
-                              <Col md={6}>
-                                <Row className="mb-3">
-                                  <label
-                                    htmlFor="txtStateProvinceShipping"
-                                    className="col-lg-3 col-form-label"
-                                  >
-                                    Declaration
-                                  </label>
-                                  <div className="col-lg-9">
-                                    <Input
-                                      id="txtStateProvinceShipping"
-                                      name="txtStateProvinceShipping"
-                                      type="text"
-                                      className="form-control"
-                                    />
-                                  </div>
-                                </Row>
-                              </Col>
-                            </Row>
-                          </Form>
-                        </TabPane>
-                        <TabPane tabId={3}>
-                          <Form>
-                            <Row>
-                              <Col md={6}>
-                                <Row className="mb-3">
-                                  <label
-                                    htmlFor="txtNameCard"
-                                    className="col-lg-3 col-form-label"
-                                  >
-                                    Name on Card
-                                  </label>
-                                  <div className="col-lg-9">
-                                    <Input
-                                      id="txtNameCard"
-                                      name="txtNameCard"
-                                      type="text"
-                                      className="form-control"
-                                    />
-                                  </div>
-                                </Row>
-                              </Col>
-                              <Col md={6}>
-                                <Row className="mb-3">
-                                  <label
-                                    htmlFor="ddlCreditCardType"
-                                    className="col-lg-3 col-form-label"
-                                  >
-                                    Credit Card Type
-                                  </label>
-                                  <div className="col-lg-9">
-                                    <Input
-                                      type="select"
-                                      id="ddlCreditCardType"
-                                      name="ddlCreditCardType"
-                                      className="form-select"
-                                    >
-                                      <option value="">
-                                        --Please Select--
-                                      </option>
-                                      <option value="AE">
-                                        American Express
-                                      </option>
-                                      <option value="VI">Visa</option>
-                                      <option value="MC">MasterCard</option>
-                                      <option value="DI">Discover</option>
-                                    </Input>
-                                  </div>
-                                </Row>
-                              </Col>
-                            </Row>
-                            <Row>
-                              <Col md={6}>
-                                <Row className="mb-3">
-                                  <label
-                                    htmlFor="txtCreditCardNumber"
-                                    className="col-lg-3 col-form-label"
-                                  >
-                                    Credit Card Number
-                                  </label>
-                                  <div className="col-lg-9">
-                                    <Input
-                                      id="txtCreditCardNumber"
-                                      name="txtCreditCardNumber"
-                                      type="text"
-                                      className="form-control"
-                                    />
-                                  </div>
-                                </Row>
-                              </Col>
-                              <Col md={6}>
-                                <Row className="mb-3">
-                                  <label
-                                    htmlFor="txtCardVerificationNumber"
-                                    className="col-lg-3 col-form-label"
-                                  >
-                                    Card Verification Number
-                                  </label>
-                                  <div className="col-lg-9">
-                                    <Input
-                                      id="txtCardVerificationNumber"
-                                      name="txtCardVerificationNumber"
-                                      type="text"
-                                      className="form-control"
-                                    />
-                                  </div>
-                                </Row>
-                              </Col>
-                            </Row>
-                            <Row>
-                              <Col md={6}>
-                                <Row className="mb-3">
-                                  <label
-                                    htmlFor="txtExpirationDate"
-                                    className="col-lg-3 col-form-label"
-                                  >
-                                    Expiration Date
-                                  </label>
-                                  <div className="col-lg-9">
-                                    <Input
-                                      id="txtExpirationDate"
-                                      name="txtExpirationDate"
                                       type="text"
                                       className="form-control"
                                     />
