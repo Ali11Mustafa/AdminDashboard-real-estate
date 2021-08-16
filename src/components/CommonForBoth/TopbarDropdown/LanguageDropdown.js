@@ -16,10 +16,39 @@ const LanguageDropdown = () => {
   // Declare a new state variable, which we'll call "menu"
   const [selectedLang, setSelectedLang] = useState("")
   const [menu, setMenu] = useState(false)
-
+  const [dirProperties, setDir] = useState({
+    dir: 'ltr',
+    className: 'ml-auto',
+    textDir: 'text-left',
+  })
+  const handelDir = () => {
+    if (
+      localStorage.getItem('I18N_LANGUAGE') !== 'en' &&
+      localStorage.getItem('lang') !== null
+    ) {
+      const newDir = 'rtl'
+      const newClassName = 'mr-auto'
+      const newtextDir = 'text-right'
+      const newdirProperties = { ...dirProperties }
+      newdirProperties.dir = newDir
+      newdirProperties.className = newClassName
+      newdirProperties.textDir = newtextDir
+      setDir(newdirProperties)
+    } else {
+      const newDir = 'ltr'
+      const newClassName = 'ml-auto'
+      const newtextDir = 'text-left'
+      const newdirProperties = { ...dirProperties }
+      newdirProperties.dir = newDir
+      newdirProperties.className = newClassName
+      newdirProperties.textDir = newtextDir
+      setDir(newdirProperties)
+    }
+  }
   useEffect(() => {
     const currentLanguage = localStorage.getItem("I18N_LANGUAGE")
     setSelectedLang(currentLanguage)
+    handelDir()
   }, [])
 
   const changeLanguageAction = lang => {
@@ -27,6 +56,30 @@ const LanguageDropdown = () => {
     i18n.changeLanguage(lang)
     localStorage.setItem("I18N_LANGUAGE", lang)
     setSelectedLang(lang)
+    if(localStorage.getItem("I18N_LANGUAGE")==='en'){
+      document.body.dir ="rtl";
+
+      
+      const newDir = 'rtl'
+      const newClassName = 'mr-auto'
+      const newtextDir = 'text-right'
+      const newdirProperties = { ...dirProperties }
+      newdirProperties.dir = newDir
+      newdirProperties.className = newClassName
+      newdirProperties.textDir = newtextDir
+    }else{
+      document.body.dir ="ltr";
+
+      const newDir = 'ltr'
+      const newClassName = 'ml-auto'
+      const newtextDir = 'text-left'
+      const newdirProperties = { ...dirProperties }
+      newdirProperties.dir = newDir
+      newdirProperties.className = newClassName
+      newdirProperties.textDir = newtextDir
+    }
+    
+
   }
 
   const toggle = () => {
@@ -34,7 +87,7 @@ const LanguageDropdown = () => {
   }
 
   return (
-    <>
+    <div  className={dirProperties.textDir} style={{direction:"rtl"}}>
       <Dropdown
         isOpen={menu}
         toggle={toggle}
@@ -72,7 +125,7 @@ const LanguageDropdown = () => {
           ))}
         </DropdownMenu>
       </Dropdown>
-    </>
+    </div>
   )
 }
 
