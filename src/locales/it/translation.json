@@ -3,7 +3,7 @@
   "Search": "Ricerca",
   "Menu": "Menù",
   "Dashboards": "cruscotti",
-  "Dashboard": "Pannello di controllo",
+  "Dashboard": "داشبۆرد",
   "Default": "Predefinita",
   "Saas": "Sass",
   "Crypto": "Crypto",
@@ -79,7 +79,7 @@
   "Error 404": "Errore 404",
   "Error 500": "Errore 500",
   "Components": "componenti",
-  "UI Elements": "Elementi dell'interfaccia utente",
+  "UI Elements": "جوانکاری",
   "Alerts": "avvisi",
   "Buttons": "pulsanti",
   "Cards": "Carte",
@@ -155,6 +155,6 @@
   "Horizontal layout": "Layout orizzontale",
   "Light Sidebar": "Barra laterale leggera",
   "Compact Sidebar": "Barra laterale compatta",
-  "Email Templates":"Modelli di posta elettronica",
+  "Email Templates":"تێمپلێتەکان",
   "Basic Action Email":"Email azione di base"
 }

@@ -33,6 +33,11 @@ import "chartist/dist/scss/chartist.scss"
 import { withTranslation } from "react-i18next"
 
 const Dashboard = props => {
+  const [ dirProperties, setDir ] = useState({
+		dir: 'ltr',
+		className: 'ml-auto',
+		textDir: 'text-left'
+	});
   const [menu, setMenu] = useState(false)
   const toggle = () => {
     setMenu(!menu)
